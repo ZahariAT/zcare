@@ -1,0 +1,11 @@
+services:
+
+  web_run_unit_tests:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    volumes:
+      - .:/code
+    command: >
+      sh -cx "coverage run manage.py test item.tests core.tests &&
+              coverage report -m"
