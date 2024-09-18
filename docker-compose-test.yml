@@ -1,6 +1,7 @@
 services:
 
   web_run_unit_tests:
+    env_file: ".env"
     build:
       context: .
       dockerfile: Dockerfile
